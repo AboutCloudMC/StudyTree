@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyTree</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    {% block head %}{% endblock %}
+</head>
+<body>
+    {% block body %}{% endblock %}
+
+    <div class="stars">
+        <!-- Stars will be added dynamically via JavaScript -->
+    </div>
+
+    <div class="waves"></div>
+    <div class="waves waves-behind"></div>
+
+    <script src="https://kit.fontawesome.com/your_fontawesome_kit.js" crossorigin="anonymous"></script>  <!-- Replace with your kit -->
+    <script src="{{ url_for('static', filename='js/base.js') }}"></script>
+</body>
+</html>

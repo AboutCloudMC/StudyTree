@@ -1,0 +1,112 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 40px auto;
+    max-width: 800px;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+h1, h2, h3 {
+    color: #222;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 2rem;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-top: 30px;
+}
+
+ul {
+    margin-left: 20px;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+strong {
+    color: #000;
+}
+
+code {
+    background-color: #eee;
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+.content-container {
+    width: 800px;
+    height: 80vh; /* 80% of viewport height */
+    padding: 30px;
+    background: rgba(255,255,255,0.9);
+    border-radius: 10px;
+    overflow-y: auto; /* allows scrolling within this div */
+    margin: 60px auto 0 auto;
+    color: black;
+    position: relative;
+    z-index: 1;
+}
+
+.light-mode {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+}
+
+.dark-mode {
+    background-color: rgba(30, 30, 30, 0.95);
+    color: #eaeaea;
+}
+
+#toggle-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    font-size: 16px;
+}
+
+.button-group {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+    display: flex;
+    gap: 10px;
+}
+
+.icon-btn {
+    width: 35px;
+    height: 35px;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 8px; /* <— changed from 50% to 8px */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.icon-btn i {
+    color: #333;
+    font-size: 16px;
+}
+
+.icon-btn:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.1);
+}
+
+.dark-mode {
+    color:
+}
