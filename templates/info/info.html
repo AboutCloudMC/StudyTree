@@ -1,27 +1,36 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} 
 
-{% block head %}
-<link rel="stylesheet" href="{{ url_for('static', filename='css/info.css') }}">
-{% endblock %}
+{% block head %} 
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/info.css') }}"> 
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='logoWeb.png') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+{% endblock %} 
 
-{% block body %}
+{% block body %} 
+    <div class="button-group"> 
+        <button class="icon-btn" id="theme-toggle-btn"> 
+            <i class="fa-solid fa-moon"></i> 
+            <span id="theme-toggle-text">Light Mode</span> 
+        </button> 
+        <button class="icon-btn" id="download-pdf-btn"> 
+            <i class="fa-solid fa-download"></i> 
+            <span>PDF</span>
+        </button>
+        <button class="icon-btn"> 
+            <i class="fa-solid fa-house"></i> 
+        </button> 
+    </div> 
 
-<div class="button-group">
-    <button class="icon-btn" id="theme-toggle-btn">
-        <i class="fa-solid fa-moon"></i>
-    </button>
-    <!-- Additional buttons can go here -->
-    <button class="icon-btn">
-        <i class="fa-solid fa-gear"></i>
-    </button>
-    <button class="icon-btn">
-        <i class="fa-solid fa-house"></i>
-    </button>
-</div>
+    <div class="content-container" id="content-container"> 
+        {{ text | safe }} 
+        <div class="quiz-section">
+            <button id="generate-quiz-btn" class="quiz-btn">Generate Quiz</button>
+            <div id="quiz-container"></div> <!-- AI-generated quiz appears here -->
+        </div>
+    
+    </div> 
 
-<div class="content-container" id="content-container">
-    {{ text | safe }}
-</div>
-
-<script src="{{ url_for('static', filename='js/info.js') }}"></script>
+   
+    
+    <script src="{{ url_for('static', filename='js/info.js') }}"></script> 
 {% endblock %}

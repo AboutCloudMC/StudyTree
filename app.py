@@ -1,6 +1,7 @@
 from flask import Flask, request, render_template, redirect, url_for
 from google import genai
 import markdown
+import os
 
 app = Flask(__name__, template_folder="templates")
 
@@ -13,7 +14,7 @@ def index():
         user_input = request.form.get('topic')
 
         if user_input:
-            client = genai.Client(api_key="")
+            client = genai.Client(api_key=os.getenv("KEY"))
             prompt = f"Write an article over the following topic for a study website.\nTopic: {user_input}"
 
             response = client.models.generate_content(

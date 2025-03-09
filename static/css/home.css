@@ -1,35 +1,171 @@
+/* General Body Styles */
 body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f4f4f4;
-        }
-        h1 {
-            color: #333;
-        }
-        input[type="text"] {
-            width: 300px;
-            padding: 10px;
-            font-size: 16px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        button {
-            padding: 10px 15px;
-            font-size: 16px;
-            cursor: pointer;
-            background-color: #28a745;
-            color: white;
-            border: none;
-            border-radius: 5px;
-        }
-        button:hover {
-            background-color: #218838;
-        }
+    font-family: 'Arial', sans-serif;
+    margin: 40px auto;
+    max-width: 800px;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa; /* Light background */
+}
 
-        /* Loading overlay covers
+body.dark-mode {
+    background-color: rgba(30, 30, 30, 0.95); /* Dark background for body */
+    color: #eaeaea; /* Light text color for body */
+}
+
+body.dark-mode strong {
+    color: #eaeaea; /* Light color for bold text in dark mode */
+}
+
+body.light-mode strong {
+    color: #000; /* Dark color for bold text in light mode */
+}
+
+/* Headings */
+h1, h2, h3 {
+    color: #222;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 2rem;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-top: 30px;
+}
+
+/* Lists */
+ul {
+    margin-left: 20px;
+}
+
+/* Paragraphs */
+p {
+    margin-bottom: 15px;
+}
+
+strong {
+    color: inherit; /* Inherit the text color from the parent */
+}
+
+/* Code */
+code {
+    background-color: #eee;
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+/* Content Container */
+.content-container {
+    width: 800px;
+    height: 80vh; /* 80% of viewport height */
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    overflow-y: auto; /* Allows scrolling within this div */
+    margin: 60px auto 0 auto;
+    color: black;
+    position: relative;
+    z-index: 1;
+}
+
+.content-container.dark-mode {
+    background: rgba(40, 40, 40, 0.95); /* Dark background for content container */
+    color: #eaeaea; /* Light text color for content container */
+}
+
+/* Button Styles */
+.button-group {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+    display: flex;
+    gap: 10px;
+}
+
+.icon-btn {
+    width: 35px;
+    height: 35px;
+    background-color: #ffffff; /* Default button background color */
+    border: none;
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    font-size: 12px; /* Smaller text for button */
+    color: #333; /* Default text color (black) when button is white */
+}
+
+.icon-btn i {
+    font-size: 16px; /* Icon size */
+}
+
+.icon-btn:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.1);
+}
+
+.dark-mode .icon-btn {
+    background-color: #333; /* Dark background for button */
+    color: #ffffff; /* White text when button is black */
+}
+
+.dark-mode .icon-btn:hover {
+    background-color: #444; /* Darker background on hover */
+}
+
+.light-mode .icon-btn {
+    color: #333; /* Black text when the button is white */
+}
+
+.light-mode .icon-btn:hover {
+    background-color: #f0f0f0; /* Light hover background */
+}
+
+/* Text inside the button */
+#theme-toggle-text {
+    margin-left: 8px;
+    font-size: 14px; /* Adjust text size inside the button */
+}
+
+/* Dark Mode Text Color for Button */
+.dark-mode #theme-toggle-text {
+    color: #eaeaea; /* Light text when in dark mode */
+}
+
+.light-mode #theme-toggle-text {
+    color: #333; /* Dark text when in light mode */
+}
+
+/* Links */
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Footer or Additional Content (If Needed) */
+footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: #007bff;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}

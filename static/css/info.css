@@ -1,15 +1,21 @@
+/* General Styles */
 body {
     font-family: 'Arial', sans-serif;
     margin: 40px auto;
     max-width: 800px;
     line-height: 1.6;
     color: #333;
-    background-color: #f8f9fa;
+    background-color: #f8f9fa; /* Light background */
 }
 
-h1, h2, h3 {
-    color: #222;
-    margin-bottom: 15px;
+body.dark-mode {
+    background-color: rgba(30, 30, 30, 0.95); /* Dark background */
+    color: #eaeaea;
+}
+
+/* Headings */
+h1, h2, h3, strong {
+    color: inherit; /* Inherit text color */
 }
 
 h1 {
@@ -23,6 +29,15 @@ h2 {
     margin-top: 30px;
 }
 
+body.light-mode h1, body.light-mode h2, body.light-mode h3, body.light-mode strong {
+    color: #222;
+}
+
+body.dark-mode h1, body.dark-mode h2, body.dark-mode h3, body.dark-mode strong {
+    color: #eaeaea;
+}
+
+/* Text Elements */
 ul {
     margin-left: 20px;
 }
@@ -31,49 +46,32 @@ p {
     margin-bottom: 15px;
 }
 
-strong {
-    color: #000;
-}
-
 code {
     background-color: #eee;
     padding: 2px 5px;
     border-radius: 3px;
 }
 
+/* Content Container */
 .content-container {
     width: 800px;
-    height: 80vh; /* 80% of viewport height */
+    height: 80vh;
     padding: 30px;
-    background: rgba(255,255,255,0.9);
+    background: rgba(255, 255, 255, 0.9);
     border-radius: 10px;
-    overflow-y: auto; /* allows scrolling within this div */
-    margin: 60px auto 0 auto;
+    overflow-y: auto;
+    margin: 60px auto 0;
     color: black;
     position: relative;
     z-index: 1;
 }
 
-.light-mode {
-    background-color: rgba(255, 255, 255, 0.9);
-    color: #333;
-}
-
-.dark-mode {
-    background-color: rgba(30, 30, 30, 0.95);
+.content-container.dark-mode {
+    background: rgba(40, 40, 40, 0.95);
     color: #eaeaea;
 }
 
-#toggle-btn {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    cursor: pointer;
-    background: transparent;
-    border: none;
-    font-size: 16px;
-}
-
+/* Button Styles */
 .button-group {
     position: fixed;
     top: 20px;
@@ -88,17 +86,18 @@ code {
     height: 35px;
     background-color: #ffffff;
     border: none;
-    border-radius: 8px; /* <— changed from 50% to 8px */
+    border-radius: 8px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: background-color 0.3s, transform 0.2s;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    font-size: 12px;
+    color: #333;
 }
 
 .icon-btn i {
-    color: #333;
     font-size: 16px;
 }
 
@@ -107,6 +106,81 @@ code {
     transform: scale(1.1);
 }
 
-.dark-mode {
-    color:
+/* Dark Mode Button Styles */
+.dark-mode .icon-btn {
+    background-color: #333;
+    color: #ffffff;
+}
+
+.dark-mode .icon-btn:hover {
+    background-color: #444;
+}
+
+.light-mode .icon-btn:hover {
+    background-color: #f0f0f0;
+}
+
+/* Theme Toggle Text */
+#theme-toggle-text {
+    margin-left: 8px;
+    font-size: 14px;
+}
+
+.dark-mode #theme-toggle-text {
+    color: #eaeaea;
+}
+
+.light-mode #theme-toggle-text {
+    color: #333;
+}
+
+/* Links */
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: #007bff;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Quiz Section */
+.quiz-section {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.dark-mode .quiz-section {
+    background-color: rgba(40, 40, 40, 0.9);
+    color: #eaeaea;
+}
+
+.quiz-question {
+    margin-bottom: 15px;
+}
+
+.quiz-question input {
+    margin-right: 8px;
+}
+
+.correct-answer {
+    font-weight: bold;
+    color: green;
 }
